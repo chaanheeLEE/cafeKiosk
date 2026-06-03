@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CafeKioskTest {
-    
+
     @Test
     public void add_manual_test(){
         CafeKiosk cafeKiosk = new CafeKiosk();
@@ -16,7 +16,7 @@ public class CafeKioskTest {
         cafeKiosk.add(new Americano());
         System.out.println("담긴 음료 수 : " + cafeKiosk.getBeverages().size());
         System.out.println("담긴 음료 : " + cafeKiosk.getBeverages().get(0).getName());
-        
+
     }
 
     @Test
@@ -26,6 +26,26 @@ public class CafeKioskTest {
 
         assertThat(cafeKiosk.getBeverages().size()).isEqualTo(1);
         assertThat(cafeKiosk.getBeverages().get(0).getName()).isEqualTo("아메리카노");
+    }
+
+    @Test
+    void addSeveralBeverages(){
+        CafeKiosk cafeKiosk = new CafeKiosk();
+        Americano americano = new Americano();
+        cafeKiosk.add(americano, 2);
+
+        assertThat(cafeKiosk.getBeverages().size()).isEqualTo(2);
+        assertThat(cafeKiosk.getBeverages().get(0)).isEqualTo(americano);
+    }
+
+    @Test
+    void addZeroBeverages(){
+        CafeKiosk cafeKiosk = new CafeKiosk();
+        Americano americano = new Americano();
+
+        assertThatThrownBy(() -> cafeKiosk.add(americano, 0))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("음료는 한 잔 이상 주문 가능합니다.");
     }
 
     @Test
