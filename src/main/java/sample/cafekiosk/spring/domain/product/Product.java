@@ -1,6 +1,7 @@
 package sample.cafekiosk.spring.domain.product;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import sample.cafekiosk.spring.domain.BaseEntity;
@@ -25,4 +26,13 @@ public class Product extends BaseEntity {
     private String name;
     private int price;
 
+
+    @Builder
+    public Product(String name, int price, String productNumber, ProductSellingType sellingType, ProductType type) {
+        this.name = name;
+        this.price = price;
+        this.productNumber = productNumber;
+        this.sellingType = sellingType;
+        this.type = type;
+    }
 }
