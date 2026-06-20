@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.NonNull;
 import org.springframework.stereotype.Service;
 import sample.cafekiosk.spring.api.controller.order.request.OrderCreateRequest;
-import sample.cafekiosk.spring.api.controller.order.response.OrderResponse;
+import sample.cafekiosk.spring.api.service.order.response.OrderResponse;
 import sample.cafekiosk.spring.domain.order.Order;
 import sample.cafekiosk.spring.domain.order.OrderRepository;
 import sample.cafekiosk.spring.domain.product.Product;
