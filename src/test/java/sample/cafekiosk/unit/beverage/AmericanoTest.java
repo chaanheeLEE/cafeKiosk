@@ -12,7 +12,7 @@ class AmericanoTest {
         Americano americano = new Americano();
 
 //        assertEquals("Americano", americano.getName());
-        assertThat(americano.getName()).isEqualTo("Americano");
+        assertThat(americano.getName()).isEqualTo("아메리카노");
     }
 
     @Test

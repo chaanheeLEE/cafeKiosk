@@ -12,7 +12,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@DataJpaTest
 class StockTest {
 
     @DisplayName("재고의 수량이 제공된 수량보다 적은지 확인한다.")
