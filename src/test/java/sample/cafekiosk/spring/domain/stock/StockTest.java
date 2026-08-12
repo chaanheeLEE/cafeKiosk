@@ -6,7 +6,6 @@ import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 class StockTest {
@@ -33,7 +32,7 @@ class StockTest {
         int quantity = 1;
 
         //when
-        stock.deduceQuantity(quantity);
+        stock.deductQuantity(quantity);
         
         //then
         assertThat(stock.getQuantity()).isZero();
@@ -47,7 +46,7 @@ class StockTest {
         int quantity = 2;
 
         //when & then
-        assertThatThrownBy(() -> stock.deduceQuantity(quantity))
+        assertThatThrownBy(() -> stock.deductQuantity(quantity))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("차감할 재고 수량이 없습니다.");
     }

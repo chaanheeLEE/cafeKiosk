@@ -63,7 +63,7 @@ public class OrderService {
             if (stock.isQuantityLessThan(quantity)) {
                 throw new IllegalArgumentException("재고가 부족한 상품이 있습니다.");
             }
-            stock.deduceQuantity(quantity);
+            stock.deductQuantity(quantity);
 
         }
     }
